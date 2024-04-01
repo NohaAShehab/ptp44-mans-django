@@ -18,3 +18,4 @@ python manage.py startapp products
 
 
 
+## create our first view
