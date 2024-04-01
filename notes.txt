@@ -1,0 +1,20 @@
+1- install django
+pip install django
+
+2- start our first django project
+https://docs.djangoproject.com/en/5.0/intro/tutorial01/#creating-a-project
+
+3- design pattern
+https://refactoring.guru/design-patterns
+
+singleton
+https://refactoring.guru/design-patterns/singleton
+
+
+every django project consists of some application
+to create application
+
+python manage.py startapp products
+
+
+
