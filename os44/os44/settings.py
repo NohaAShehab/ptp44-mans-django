@@ -37,6 +37,10 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    # register application I have created to the installed apps
+    'categories.apps.CategoriesConfig',
+    'products.apps.ProductsConfig'
+    # 'categories.apps.CategoriesConfig'
 ]
 
 MIDDLEWARE = [

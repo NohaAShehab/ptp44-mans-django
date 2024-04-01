@@ -44,6 +44,9 @@ def product_details(request,id):
 
 
 
+def products_home(request):
+    # return with template home.html
+    return render(request, "products/home.html", status=200)  # render http response
 
 
 

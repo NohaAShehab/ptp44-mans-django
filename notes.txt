@@ -19,3 +19,7 @@ python manage.py startapp products
 
 
 ## create our first view
+
+
+### create our first templates
+https://docs.djangoproject.com/en/5.0/ref/templates/
