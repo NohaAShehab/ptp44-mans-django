@@ -1,5 +1,6 @@
 from django.urls import path
-from products.views import hello, welcome,landing, product_details, products_home
+from products.views import (hello, welcome,landing, product_details,
+                            products_home, product_profile)
 urlpatterns = [
 
 
@@ -8,6 +9,7 @@ urlpatterns = [
     path('land', landing, name='allproducts'),
     # specify part of the url --> variable and must be integer
     path('prd/<int:id>', product_details, name='prd.details'),
-    path('home', products_home, name='products.home')
+    path('home', products_home, name='products.home'),
+    path('<int:id>', product_profile, name='products.profile')
 
 ]

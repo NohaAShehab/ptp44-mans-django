@@ -20,9 +20,9 @@ def welcome(request):
 
 products = [
     {"id":1 , 'name':"iphone","price": 80000, "image": "pic1.png"},
-    {"id":2 , 'name':"Kia sportage","price": 1000000, "image": "pic2.png"},
-    {"id":3 , 'name':"MACBOOK","price": 100000, "image": "pic3.png"},
-    {"id":2 , 'name':"airpods","price": 30000, "image": "pic4.png"},
+    {"id":2 , 'name':"Kia sportage","price": 1000000, "image": "pic22.png"},
+    {"id":3 , 'name':"MACBOOK","price": 100000, "image": "pic33.png"},
+    {"id":4 , 'name':"airpods","price": 30000, "image": "pic44.png"},
 
 ]
 
@@ -50,6 +50,18 @@ def products_home(request):
                   context = {"name": "noha", "products": products},
                   status=200)  # render http response
 
+
+
+def product_profile(request, id):
+    filtered_products = filter(lambda product: product['id'] == id, products)
+    filtered_products = list(filtered_products)
+    if filtered_products:
+        product = filtered_products[0]
+        return render(request, "products/details.html", context={
+            "product": product
+        })
+
+    return HttpResponse("product not found")
 
 
 
