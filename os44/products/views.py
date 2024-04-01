@@ -1,6 +1,6 @@
 from django.shortcuts import render
 from django.http import HttpResponse
-
+import json
 # Create your views here.
 
 ##function views
@@ -38,7 +38,8 @@ def product_details(request,id):
     allproducts = list(filtered_products)
     print(allproducts)
     if allproducts:
-        return HttpResponse(allproducts[0])
+        # return HttpResponse(allproducts[0].values())
+        return HttpResponse(json.dumps(allproducts[0]))
     return  HttpResponse("No product found ")
 
 
