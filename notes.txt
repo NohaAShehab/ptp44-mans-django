@@ -23,3 +23,9 @@ python manage.py startapp products
 
 ### create our first templates
 https://docs.djangoproject.com/en/5.0/ref/templates/
+
+"variables"
+https://docs.djangoproject.com/en/5.0/ref/templates/language/#variables
+
+"for loop"
+https://docs.djangoproject.com/en/5.0/ref/templates/language/#tags
