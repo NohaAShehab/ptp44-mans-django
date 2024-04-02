@@ -82,7 +82,23 @@ Products.objects.filter(id=1)  # queryset
 Product.objects.get(id=1) ## product object
 
 
+## save object to the db
+In [1]: from products.models import Product
 
+In [2]: prd = Product()
+
+In [3]: prd.name='abc'
+
+In [4]: prd.price = 10
+
+In [5]: prd.image ='pic33.png'
+prd.save()
+
+#########################################################
+myprd = Product(name='book', price=100, image='pic44.png', code='dd')
+In [11]: myprd.save()
+
+-----------------------------------------------
 ## create from --> saving data in the database from website
 
 
