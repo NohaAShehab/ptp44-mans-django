@@ -48,10 +48,26 @@ python manage.py migrate # apply migration files
 # to create superuser
  python manage.py createsuperuser
 
+## using models
+https://docs.djangoproject.com/en/5.0/topics/db/models/
+
+## fields and fields reference
+https://docs.djangoproject.com/en/5.0/topics/db/models/#fields
+https://docs.djangoproject.com/en/5.0/ref/models/fields/#model-field-types
 
 
+## to add application you have created to the admin dashboard
+>goto admin.py
+>add these lines
+from products.models import Product
+admin.site.register(Product)
+
+customize of admin dashboard
+https://django-jazzmin.readthedocs.io/
 
 
+## customize functionality of admin dashboard
+https://realpython.com/customize-django-admin-python/
 
 
 
