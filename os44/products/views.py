@@ -1,5 +1,5 @@
 ##django imports
-from django.shortcuts import render, get_object_or_404
+from django.shortcuts import render, get_object_or_404, redirect, reverse
 from django.http import HttpResponse
 
 ## python imports
@@ -86,3 +86,11 @@ def product_show(request, id):
     # product = Product.objects.get(id=id)
     product = get_object_or_404(Product, pk=id)
     return render(request, "products/crud/show.html", context={"product": product})
+
+
+def product_delete(request, id):
+    product = get_object_or_404(Product, pk=id)
+    product.delete()
+    # return HttpResponse("Product deleted")
+    url = reverse("products.index")
+    return redirect(url)

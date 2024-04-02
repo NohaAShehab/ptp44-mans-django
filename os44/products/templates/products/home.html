@@ -3,30 +3,33 @@
 {% block title %} Products Home {% endblock %}
 
 {% block content %}
-    <h1> All products </h1>
+<h1> All products </h1>
 <table class="table">
-        <tr>
-            <td> ID</td> <td> Name </td> <td> Price</td> <td> Image</td>
-            <td> Show</td>
-        </tr>
-        {% for prd in products %}
-            <tr>
-                <td>{{prd.id }}</td>
-                <td> {{prd.name}}</td>
-                <td>{{prd.price}}</td>
-                <td> <img width="200" height="200 "
-                    src = "{% static 'products/images/'|add:prd.image %}"
+    <tr>
+        <td> ID</td>
+        <td> Name</td>
+        <td> Price</td>
+        <td> Image</td>
+        <td> Show</td>
+    </tr>
+    {% for prd in products %}
+    <tr>
+        <td>{{prd.id }}</td>
+        <td> {{prd.name}}</td>
+        <td>{{prd.price}}</td>
+        <td><img width="200" height="200 "
+                 src="{% static 'products/images/'|add:prd.image %}"
 
-                > </td>
-                <td >
-                    <a class="btn btn-info" href="{% url 'products.profile' prd.id%}"> Show</a>
-                </td>
+        ></td>
+        <td>
+            <a class="btn btn-info" href="{% url 'products.profile' prd.id%}"> Show</a>
+        </td>
 
-            </tr>
+    </tr>
 
-        {% endfor %}
+    {% endfor %}
 
-        </table>
+</table>
 <h1>{% static 'products/js/script.js'%} </h1>
 <!--<script src="{% static 'products/js/script.js'%}">-->
 

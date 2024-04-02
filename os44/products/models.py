@@ -20,3 +20,9 @@ class Product(models.Model):
         pass
         url = reverse('products.show', args=[self.id])
         return url
+
+    @property
+    def delete_url(self):
+        pass
+        url = reverse('products.delete', args=[self.id])
+        return url

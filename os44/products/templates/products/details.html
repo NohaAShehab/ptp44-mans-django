@@ -1,15 +1,15 @@
 {% extends 'layouts/base.html' %}
 {% load static %}
 {% block content %}
-    {{product}}
-    <h2>You must restart server after adding static folder </h2>
-    <div class="card" style="width: 18rem;">
-  <img src="{% static 'products/images/' %}{{product.image}}" class="card-img-top" alt="...">
-  <div class="card-body">
-    <h5 class="card-title">{{product.name}}</h5>
-    <p class="card-text">Price{{product.price}}</p>
-    <a href="#" class="btn btn-primary">Go somewhere</a>
-  </div>
+{{product}}
+<h2>You must restart server after adding static folder </h2>
+<div class="card" style="width: 18rem;">
+    <img src="{% static 'products/images/' %}{{product.image}}" class="card-img-top" alt="...">
+    <div class="card-body">
+        <h5 class="card-title">{{product.name}}</h5>
+        <p class="card-text">Price{{product.price}}</p>
+        <a href="#" class="btn btn-primary">Go somewhere</a>
+    </div>
 </div>
 
 {%endblock %}
