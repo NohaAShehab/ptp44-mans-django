@@ -35,7 +35,18 @@ https://docs.djangoproject.com/en/5.0/ref/templates/language/#tags
 
 
 
+****************************************
+connect to mysql db
+1-https://docs.djangoproject.com/en/5.0/ref/databases/
 
+python manage.py makemigrations
+scan model classes in all the installed apps for changes --> based on these changes
+generate migrations files
+
+python manage.py migrate # apply migration files
+
+# to create superuser
+ python manage.py createsuperuser
 
 
 
