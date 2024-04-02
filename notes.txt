@@ -70,5 +70,20 @@ https://django-jazzmin.readthedocs.io/
 https://realpython.com/customize-django-admin-python/
 
 
+### get data from database  --> display it in website
+https://docs.djangoproject.com/en/5.0/ref/models/querysets/#queryset-api-reference
+
+# django provide development --> testing model operations
+select * from products;
+Product.objects.all()
+
+select * from products where id = 1;
+Products.objects.filter(id=1)  # queryset
+Product.objects.get(id=1) ## product object
+
+
+
+## create from --> saving data in the database from website
+
 
 

@@ -1,6 +1,14 @@
-from django.shortcuts import render
+##django imports
+from django.shortcuts import render, get_object_or_404
 from django.http import HttpResponse
+
+## python imports
 import json
+
+
+## imports from your created files
+from products.models import Product
+
 # Create your views here.
 
 ##function views
@@ -68,4 +76,13 @@ def product_profile(request, id):
 
 
 
+def products_index(request):
+    products  = Product.objects.all()
+    return render(request, "products/crud/index.html",
+                  context={"products": products})
 
+
+def product_show(request, id):
+    # product = Product.objects.get(id=id)
+    product = get_object_or_404(Product, pk=id)
+    return render(request, "products/crud/show.html", context={"product": product})
