@@ -1,0 +1,14 @@
+
+1- connect application to mysql
+
+2- create model Book(title , no_of_page, author, price, image, created_at, updated_at)
+
+3- create full crud operations
+    list all books from db
+    create new book  (upload image )
+    edit book
+    delete book ---> ask are you sure you want to delete or not
+
+notes:
+    1- use models --> __str__ , use property dectorators for urls, image paths
+    2- beautiful frontend is mandatory

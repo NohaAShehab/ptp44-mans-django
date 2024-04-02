@@ -102,4 +102,56 @@ In [11]: myprd.save()
 ## create from --> saving data in the database from website
 
 
+# upload image in django
+use field in models --> imagefield
+install this package
+ pip install Pillow
+
+ # define path --> needed to upload images in
+ in the project directory
+ /media/products/images
+
+
+ # tell application where I will upload the images
+ goto settings.py
+
+ # add media url
+import os
+MEDIA_URL = 'media/'
+MEDIA_ROOT = os.path.join(BASE_DIR, 'media/')
+
+
+##generate url for media files
+goto url file for the project
+add the below
+
+from django.conf import settings
+from django.conf.urls.static import static
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 

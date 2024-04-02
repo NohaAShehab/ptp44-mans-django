@@ -20,10 +20,7 @@
         <td>{{product.id }}</td>
         <td> {{product.name}}</td>
         <td>{{product.price}}</td>
-        <td><img width="200" height="200 "
-                 src="{% static 'products/images/'|add:product.image %}"
-
-        ></td>
+        <td> <img width="200" height="200" src="{{product.image_url}}"></td>
         <!--                <td >-->
         <!--                    <a class="btn btn-info" href="{% url 'products.show' product.id%}"> Show</a>-->
         <!--                </td>-->

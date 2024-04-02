@@ -16,17 +16,11 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path, include
-from products.views import hello, welcome, landing, product_details
-from categories.views import  landing as cat_landing
+from django.conf import settings
+from django.conf.urls.static import static
 urlpatterns = [
     path('admin/', admin.site.urls),
-    # path(url, viewname, name='anyname')
-    # path('helloworld', hello, name='hellopage'),
-    # path('wlcm',welcome, name='welcomepage' ),
-    # path('land', landing, name='allproducts'),
-    # # specify part of the url --> variable and must be integer
-    # path('prd/<int:id>', product_details, name='prd.details'),
-    # path('cats', cat_landing, name='categories')
+
 
 
     # include categories urls file in main url
@@ -34,6 +28,6 @@ urlpatterns = [
 
     ##include products urls
     path('products/', include("products.urls"))
-]
+]+ static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
 
 

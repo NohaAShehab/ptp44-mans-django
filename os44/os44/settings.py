@@ -39,7 +39,8 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     # register application I have created to the installed apps
     'categories.apps.CategoriesConfig',
-    'products.apps.ProductsConfig'
+    'products.apps.ProductsConfig',
+    'django_cleanup.apps.CleanupConfig',
     # 'categories.apps.CategoriesConfig'
 ]
 
@@ -136,3 +137,8 @@ STATIC_URL = 'static/'
 # https://docs.djangoproject.com/en/5.0/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+
+# add media url
+import os
+MEDIA_URL = 'media/'
+MEDIA_ROOT = os.path.join(BASE_DIR, 'media/')

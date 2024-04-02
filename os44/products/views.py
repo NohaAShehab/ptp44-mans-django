@@ -99,9 +99,14 @@ def product_delete(request, id):
 def product_create(request):
     print(request)
     if request.method == "POST":
+        print(request.FILES)
+        if request.FILES:
+            image = request.FILES["image"]
+        else:
+            image = None
         print(request.POST)
         product = Product(name=request.POST["name"], price=request.POST["price"],
-                          code=request.POST["code"], image=request.POST["image"])
+                          code=request.POST["code"], image=image)
         product.save()
         return redirect(product.show_url)
         # return HttpResponse("Post request received")
