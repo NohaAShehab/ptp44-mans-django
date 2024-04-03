@@ -146,6 +146,17 @@ https://docs.djangoproject.com/en/5.0/topics/forms/
 ## one product --> has one category
 ## category has many products
 
+#################### authentication system --> in django --->
+
+
+
+
+
+
+
+
+
+
 
 
 

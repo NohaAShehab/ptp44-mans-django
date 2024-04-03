@@ -21,10 +21,23 @@
            <li class="nav-item">
           <a class="nav-link active" aria-current="page" href="{% url 'products.home' %}">Products home</a>
         </li>
-        <li class="nav-item">
-          <a class="nav-link" href="#">Link</a>
-        </li>
 
+          {% if user.id %}
+        <li class="nav-item " style="margin-left: 600px" >
+          <a class="nav-link" href="#">{{user}}</a>
+        </li>
+          <li class="nav-item "  >
+         <form method="post" action="{% url 'logout' %}">
+             {% csrf_token %}
+             <input type="submit" value="logout">
+         </form>
+        </li>
+          {% else %}
+          </li>
+          <li class="nav-item " style="margin-left: 600px" >
+          <a class="nav-link" href="{% url 'login' %}">Login</a>
+        </li>
+          {% endif %}
 
       </ul>
 
