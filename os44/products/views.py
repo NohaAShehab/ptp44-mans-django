@@ -149,6 +149,21 @@ def create_product_model_form(request):
 
 
 
+def edit_product(request, id):
+    product= Product.get_product_by_id(id)
+    form = ProductModelForm(instance=product)
+    if request.method == "POST":
+        form = ProductModelForm(request.POST, request.FILES, instance=product)
+        if form.is_valid():
+            product = form.save()
+            return redirect(product.show_url)
+
+
+    return render(request, 'products/forms/edit.html',
+              context={"form": form})
+
+
+
 
 
 

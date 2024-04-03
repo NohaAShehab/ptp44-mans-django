@@ -17,6 +17,7 @@ product.createmodel
         <td> Image</td>
 
         <td> Show</td>
+        <td> Edit </td>
         <td>Delete</td>
     </tr>
     {% for product in products %}
@@ -30,6 +31,9 @@ product.createmodel
         <!--                </td>-->
         <td>
             <a class="btn btn-info" href="{{product.show_url}}"> Show</a>
+        </td>
+         <td>
+            <a class="btn btn-warning" href="{{product.edit_url}}"> Edit</a>
         </td>
         <td>
             <a class="btn btn-danger" href="{{product.delete_url}}"> Delete</a>

@@ -1,5 +1,5 @@
 from django.db import models
-from django.shortcuts import  reverse
+from django.shortcuts import  reverse, get_object_or_404
 
 # Create your models here.
 
@@ -24,10 +24,19 @@ class Product(models.Model):
 
     @property
     def delete_url(self):
-        pass
         url = reverse('products.delete', args=[self.id])
+        return url
+
+    @property
+    def edit_url(self):
+        url = reverse('products.edit', args=[self.id])
         return url
 
     @property
     def image_url(self):
         return f"/media/{self.image}"
+
+
+    @classmethod
+    def get_product_by_id(cls, id):
+        return  get_object_or_404(cls, pk=id)

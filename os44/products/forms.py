@@ -15,7 +15,7 @@ class ProductForm(forms.Form):
         code = self.cleaned_data['code']
         ## code --> check if exits before in the database
         code_found = Product.objects.filter(code=code).exists()
-        if code_found:
+        if code_found :
             raise forms.ValidationError('Code used before , please choose another one')
 
         return code
