@@ -31,11 +31,17 @@
              {% csrf_token %}
              <input type="submit" value="logout">
          </form>
+
+
         </li>
           {% else %}
           </li>
           <li class="nav-item " style="margin-left: 600px" >
           <a class="nav-link" href="{% url 'login' %}">Login</a>
+        </li>
+
+           <li class="nav-item "  >
+          <a class="nav-link" href="{% url 'account.register' %}">Register</a>
         </li>
           {% endif %}
 

@@ -1,5 +1,8 @@
 from django.shortcuts import render, reverse, redirect
 from django.http import HttpResponse
+from django.contrib.auth.decorators import login_required
+
+
 from categories.forms import CategoryModelForm
 from categories.models import  Category
 
@@ -12,8 +15,9 @@ def landing(request):
 def home(request):
     return render(request, "categories/home.html")
 
-
+@login_required
 def create_category(request):
+    print(request.user)
     form = CategoryModelForm()
     if request.method == "POST":
         form = CategoryModelForm(request.POST, request.FILES)

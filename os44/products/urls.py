@@ -1,4 +1,5 @@
 from django.urls import path
+from django.contrib.auth.decorators import  login_required
 from products.views import (hello, welcome,landing, product_details,
         products_home, product_profile, products_index, product_show,
                             product_delete, product_create, product_create_forms,
@@ -19,6 +20,6 @@ urlpatterns = [
     path('create', product_create, name='products.create'),
     path('forms/create', product_create_forms, name='products.create.forms'),
     path('forms/createmodel', create_product_model_form, name='product.createmodel'),
-    path('forms/<int:id>/edit',edit_product, name='products.edit' )
+    path('forms/<int:id>/edit',login_required(edit_product), name='products.edit' )
 
 ]

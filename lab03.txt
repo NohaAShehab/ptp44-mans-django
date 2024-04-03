@@ -1,0 +1,8 @@
+
+lab:
+    create complete crud operations for Catogories for books
+        (name, description)
+
+    2- connect categories to books
+
+    3- apply django auth to allow only edit/delete/create category to authenticated usres
