@@ -1,10 +1,14 @@
 {% extends 'layouts/base.html' %}
 {% load static %}
 {% block title %} Products From DB {% endblock %}
-
+product.createmodel
 {% block content %}
 <h1> All products From Database </h1>
 <a href="{% url 'products.create' %}" class="btn btn-dark">Create New Product </a>
+<a href="{% url 'products.create.forms' %}" class="btn btn-primary">Create Product via form </a>
+<a href="{% url 'product.createmodel' %}" class="btn btn-danger">Create using Model Form </a>
+
+
 <table class="table">
     <tr>
         <td> ID</td>

@@ -1,6 +1,7 @@
 ##django imports
 from django.shortcuts import render, get_object_or_404, redirect, reverse
 from django.http import HttpResponse
+from products.forms import  ProductForm, ProductModelForm
 
 ## python imports
 import json
@@ -114,3 +115,41 @@ def product_create(request):
 
     # get request
     return  render(request, 'products/crud/create.html')
+
+
+
+def product_create_forms(request):
+    # use form class
+    form = ProductForm()
+    if request.method == "POST":
+        form = ProductForm(request.POST, request.FILES)
+        if form.is_valid():
+            print(form.cleaned_data)
+
+            product = Product(name=form.cleaned_data['name'], price=form.cleaned_data['price'],
+                              image=form.cleaned_data['image'], code=form.cleaned_data['code'])
+            product.save()
+            return redirect(product.show_url)
+
+    return render(request, 'products/forms/create.html',
+                  context={'form':form})
+
+
+
+def create_product_model_form(request):
+    form = ProductModelForm()
+    if request.method == "POST":
+        form = ProductModelForm(request.POST, request.FILES)
+        if form.is_valid():
+            product=form.save()
+            return redirect(product.show_url)
+
+    return render(request, 'products/forms/createmodelform.html',
+                  context={"form": form})
+
+
+
+
+
+
+

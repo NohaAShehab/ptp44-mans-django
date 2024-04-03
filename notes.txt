@@ -133,7 +133,10 @@ from django.conf.urls.static import static
 
 
 
+### forms --> apply validation on the request parameter received
 
+## build html forms => using python
+https://docs.djangoproject.com/en/5.0/topics/forms/
 
 
 

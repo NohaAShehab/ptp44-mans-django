@@ -1,7 +1,8 @@
 from django.urls import path
 from products.views import (hello, welcome,landing, product_details,
         products_home, product_profile, products_index, product_show,
-                            product_delete, product_create)
+                            product_delete, product_create, product_create_forms,
+                            create_product_model_form)
 urlpatterns = [
 
 
@@ -15,6 +16,8 @@ urlpatterns = [
     path('', products_index, name='products.index'),
     path('<int:id>', product_show, name='products.show'),
     path('<int:id>/delete', product_delete, name='products.delete'),
-    path('create', product_create, name='products.create')
+    path('create', product_create, name='products.create'),
+    path('forms/create', product_create_forms, name='products.create.forms'),
+    path('forms/createmodel', create_product_model_form, name='product.createmodel')
 
 ]
