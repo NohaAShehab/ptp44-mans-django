@@ -10,9 +10,31 @@
         <p class="card-text">Code:{{product.code}}</p>
         <p class="card-text">Created_at{{product.created_at}}</p>
         <p class="card-text">Updated_at{{product.updated_at}}</p>
+        <h4 class="card-text"> <a href="{{product.category.show_url}}">Category:{{product.category}} </a>
+            {{product.category.description}}
+        </h4>
+
         {{product.show_url}}
         <a href="#" class="btn btn-primary">Go somewhere</a>
     </div>
+
 </div>
+  <h1> See Also :: products in the same category </h1>
+
+   <h3> {{product.category.allproducts.all}}</h3>
+
+    {% for prd in product.category.allproducts.all %}
+     <li>  <a href="{{prd.show_url}}"> {{prd}} </a>  </li>
+    {% endfor %}
+
+
+
+
+
+
+
+
+
+
 
 {%endblock %}

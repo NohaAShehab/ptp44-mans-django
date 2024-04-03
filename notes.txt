@@ -139,6 +139,14 @@ from django.conf.urls.static import static
 https://docs.djangoproject.com/en/5.0/topics/forms/
 
 
+### set up relationship ---> model
+
+## one to many
+
+## one product --> has one category
+## category has many products
+
+
 
 
 

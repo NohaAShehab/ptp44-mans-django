@@ -1,0 +1,32 @@
+{% extends 'layouts/base.html' %}
+{% load static %}
+{% block content %}
+<h2>Category Details from database </h2>
+<div class="card" style="width: 18rem;">
+    <img src="{{category.logo_url}}" class="card-img-top" alt="...">
+    <div class="card-body">
+        <h5 class="card-title">{{category.name}}</h5>
+        <p class="card-text">Description: {{category.description}}</p>
+        <p class="card-text">Created_at{{category.created_at}}</p>
+        <p class="card-text">Updated_at{{category.updated_at}}</p>
+
+        <a href="#" class="btn btn-primary">Go somewhere</a>
+    </div>
+
+</div>
+  <h1> Products in this category </h1>
+    {% for prd in category.allproducts.all %}
+        <li> <a href="{{prd.show_url}}"> {{prd}} </a> </li>
+    {% endfor %}
+
+
+
+
+
+
+
+
+
+
+
+{%endblock %}

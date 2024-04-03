@@ -2,6 +2,7 @@
 from django.shortcuts import render, get_object_or_404, redirect, reverse
 from django.http import HttpResponse
 from products.forms import  ProductForm, ProductModelForm
+from categories.models import Category
 
 ## python imports
 import json
@@ -121,13 +122,18 @@ def product_create(request):
 def product_create_forms(request):
     # use form class
     form = ProductForm()
+    category = get_object_or_404(Category, pk=1)
     if request.method == "POST":
         form = ProductForm(request.POST, request.FILES)
         if form.is_valid():
             print(form.cleaned_data)
 
+            # product = Product(name=form.cleaned_data['name'], price=form.cleaned_data['price'],
+            #                   image=form.cleaned_data['image'], code=form.cleaned_data['code'],
+            #                   category=1)
             product = Product(name=form.cleaned_data['name'], price=form.cleaned_data['price'],
-                              image=form.cleaned_data['image'], code=form.cleaned_data['code'])
+                              image=form.cleaned_data['image'], code=form.cleaned_data['code'],
+                              category=category)
             product.save()
             return redirect(product.show_url)
 

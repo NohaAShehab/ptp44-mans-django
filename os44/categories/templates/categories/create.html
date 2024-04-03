@@ -1,8 +1,7 @@
 {% extends 'layouts/base.html' %}
 {% load static %}
 {% block content %}
-<h2>Edit product {{form.instance.name}} </h2>
-<img  width="200" height="200" src="{{form.instance.image_url}}">
+<h2>Add Category</h2>
 <form method="post"  enctype="multipart/form-data">
     {% csrf_token %}
         {{form }}
